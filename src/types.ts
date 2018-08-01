@@ -1,4 +1,4 @@
-import express from 'express';
+import * as express from 'express';
 
 declare namespace Clova {
   export interface ClovaMessage {
@@ -165,7 +165,7 @@ declare namespace Clova {
     onLaunchRequest(requestHandler: Function): SkillConfigurator;
     onIntentRequest(requestHandler: Function): SkillConfigurator;
     onSessionEndedRequest(requestHandler: Function): SkillConfigurator;
-    handle(): Function;
+    handle(): express.RequestHandler;
   }
 
   export interface MiddlewareOptions {
